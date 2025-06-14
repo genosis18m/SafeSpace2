@@ -1,0 +1,56 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with soft gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.15" />
+    </linearGradient>
+    
+    <!-- Main icon gradient -->
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea" />
+      <stop offset="100%" style="stop-color:#764ba2" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Soft background circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#bgGradient)" />
+  
+  <!-- Protective embrace shape - main element -->
+  <g filter="url(#glow)">
+    <!-- Outer protective arc -->
+    <path d="M 60 80 Q 100 45 140 80 Q 135 65 100 65 Q 65 65 60 80 Z" 
+          fill="url(#iconGradient)" opacity="0.8"/>
+    
+    <!-- Inner safe space -->
+    <ellipse cx="100" cy="110" rx="35" ry="25" 
+             fill="url(#iconGradient)" opacity="0.6"/>
+    
+    <!-- Gentle waves representing calm/peace -->
+    <path d="M 70 95 Q 85 90 100 95 Q 115 100 130 95" 
+          stroke="url(#iconGradient)" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M 75 105 Q 90 100 105 105 Q 120 110 135 105" 
+          stroke="url(#iconGradient)" stroke-width="2" fill="none" opacity="0.5"/>
+    
+    <!-- Central dot representing the individual/self -->
+    <circle cx="100" cy="110" r="4" fill="url(#iconGradient)"/>
+  </g>
+  
+  <!-- Subtle outer ring for containment -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="url(#iconGradient)" 
+          stroke-width="1" opacity="0.3"/>
+  
+  <!-- Typography -->
+  <text x="100" y="165" text-anchor="middle" 
+        font-family="Arial, sans-serif" font-size="16" font-weight="300" 
+        fill="url(#iconGradient)">SafeSpace</text>
+</svg>
